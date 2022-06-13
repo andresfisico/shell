@@ -1,0 +1,8 @@
+#!/bin/bash
+echo Escriba el nombre del archivo:
+read archivo
+touch $archivo
+echo "#!/bin/bash" >> $archivo
+echo Escriba las ordenes del script
+read intrucciones
+echo "$intrucciones" >> $archivo
