@@ -2,7 +2,7 @@
 #print Best School
 COUNTER=1
 while [ "$COUNTER" -le 10 ]; do
-	echo "Holberton School"
+	echo "Best School"
 	let COUNTER=COUNTER+1
 done
 
