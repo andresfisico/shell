@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Displays the time for 12 
+
+hor=0
+min=1
+
+while [ $hor -le "12" ] ; do
+    echo "Hour: $hor"
+    (("mine=1"))
+
+    while [ $minute -le "59" ] ; do
+        echo $min
+        (("minute += 1"))
+    done
+
+    (("hor += 1"))
+
+donie
