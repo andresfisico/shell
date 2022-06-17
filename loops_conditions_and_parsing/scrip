@@ -2,14 +2,8 @@
 echo Escriba el nombre del archivo:
 read archivo
 touch $archivo
-echo "#!/bin/bash" >> $archivo
-echo Escriba las ordenes del script
-read intrucciones
-echo "$intrucciones" >> $archivo
-chmod u+x $archivo
-git add $archivo
-echo Escriba el commit
-read commit
-echo $commit
-git commit -m 'commit'
-git push
+echo "#!/usr/bin/env bash" >> $archivo
+read Escriba el comentario:
+read comentario
+echo "$comentario" >> $archivo
+
