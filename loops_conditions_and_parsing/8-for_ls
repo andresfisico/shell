@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Displays:
+
+curr_content=$("ls")
+
+for i in $curr_content ; do
+    echo "$i" | cut -d'-' -f2
+done
+
