@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# IP address 
+# HTTP status code
+
+awk '{print $1 " " $9}' apache-access.log | sort | uniq --count | sort --reverse --general-numeric-sort
