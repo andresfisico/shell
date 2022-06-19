@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 #Highlande
-trap "echo I am invincible!!!" SIGTERM
-while true
+trap "echo I am invincible!!!" SIGTERMwhile :
 do
-    echo "To infinity and beyond"
-    sleep 2
+	echo "To infinity and beyond"
+	sleep 2
 done
