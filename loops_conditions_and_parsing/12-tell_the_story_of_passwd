@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
-#(parsed) contents of the /etc/pas
+# Read file and manipulate fields
 
-while read line; do
-	USERNAME=$(echo "$line" | cut -d: -f1)
-	GROUP_ID=$(echo "$line" | cut -d: -f4)
-	HOME_DIR=$(echo "$line" | cut -d: -f6)
-	CMD_SHL=$(echo "$line" | cut -d: -f7)
-	USER_ID=$(echo "$line" | cut -d: -f3)
-	PASSWD=$(echo "$line" | cut -d: -f2)
-	USER_ID_INFO=$(echo "$line" | cut -d: -f5)
-	printf "The user %s is part of the %s gang, " "$USERNAME" "$GROUP_ID"
-	printf "lives in %s " "$HOME_DIR"
-	printf "and rides %s. %d's place is protected by " "$CMD_SHL" "$USER_ID"
-	printf "the passcode %s, more info about the user" "$PASSWD"
-	printf " here: %s\n" "$USER_ID_INFO"
-done < /etc/passwd
+FILE="/etc/passwd"
+
+while IFS=":" read -r user pw uid gid uinfo homedir shell
+do
+    echo "The user $user is part of the $gid gang, lives in $homedir and \
+rides $shell. $uid's place is protected by the passcode $pw, \
+more info about the user here: $uinfo"
+done < "$FILE"
